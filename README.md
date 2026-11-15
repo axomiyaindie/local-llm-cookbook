@@ -158,7 +158,7 @@ A machine that can run a quantized model cannot necessarily fine-tune it. Fine-t
 - `configs/`: reusable training configurations.
 - `scripts/`: setup and environment validation utilities.
 
-See the [Repository Structure](docs/repository-structure.md) for the full layout.
+See the [Repository Structure](STRUCTURE.md) for the full layout.
 
 ## FAQ
 

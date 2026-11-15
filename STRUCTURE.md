@@ -7,51 +7,65 @@ This document explains the organization of Local LLM Cookbook, the purpose of it
 ```text
 local-llm-cookbook/
 │
-├── .github/                  # GitHub templates and automation
-│   ├── ISSUE_TEMPLATE/       # Issue templates
-│   └── workflows/            # CI workflows
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug-report.yml
+│   │   └── feature-request.yml
+│   ├── workflows/
+│   │   ├── markdown-lint.yml
+│   │   └── python-checks.yml
+│   ├── FUNDING.yml
+│   └── PULL_REQUEST_TEMPLATE.md
 │
-├── assets/                   # Project images and visual assets
+├── assets/                  # Project images and visual assets
 │
-├── configs/                  # Reusable configurations
-│   └── training/             # Model training configurations
+├── configs/
+│   └── training/            # Reusable training configurations
 │
-├── docs/                     # Core project documentation
+├── docs/                    # Core project documentation
+│   ├── README.md
+│   ├── getting-started.md
+│   ├── hardware-guide.md
+│   ├── model-selection.md
+│   ├── quantization.md
+│   ├── glossary.md
+│   └── troubleshooting.md
 │
-├── examples/                 # Practical code examples
-│   ├── datasets/             # Sample datasets
-│   ├── inference/            # Local inference examples
-│   ├── fine-tuning/          # Fine-tuning examples
-│   └── deployment/           # Model deployment examples
+├── examples/
+│   ├── datasets/            # Sample datasets
+│   ├── inference/           # Local inference examples
+│   ├── fine-tuning/         # Fine-tuning examples
+│   └── deployment/          # Model deployment examples
 │
-├── guides/                   # Step-by-step tutorials
-│   ├── running-local-llms/   # Local model execution
-│   ├── fine-tuning/          # Fine-tuning workflows
-│   └── deployment/           # Model conversion and deployment
+├── guides/
+│   ├── running-local-llms/  # Ollama and LM Studio
+│   ├── fine-tuning/         # Unsloth and LLaMA-Factory
+│   └── deployment/          # Model conversion and deployment
 │
-├── scripts/                  # Setup and utility scripts
+├── scripts/                 # Setup and utility scripts
 │
-├── tests/                    # Automated tests
+├── tests/                   # Automated tests
 │
-├── .editorconfig             # Editor configuration
-├── .gitignore                # Git ignore rules
-├── .pre-commit-config.yaml   # Pre-commit configuration
-├── CHANGELOG.md              # Project change history
-├── CODE_OF_CONDUCT.md        # Community standards
-├── CONTRIBUTING.md           # Contribution guidelines
-├── LICENSE                   # Project license
-├── pyproject.toml            # Python project configuration
-├── README.md                 # Project introduction
-├── requirements.txt          # Python dependencies
-├── SECURITY.md               # Security policy
-└── SUPPORT.md                # Support information
+├── .editorconfig
+├── .gitignore
+├── .pre-commit-config.yaml
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+├── SECURITY.md
+├── STRUCTURE.md
+└── SUPPORT.md
 ```
 
 ## Directory Responsibilities
 
 ### `.github/`
 
-Contains GitHub-specific configuration, issue templates, pull request templates, and automated workflows.
+Contains GitHub-specific configuration, issue templates, pull request templates, funding information, and automated CI workflows.
 
 ### `assets/`
 
@@ -59,7 +73,7 @@ Stores project branding and visual resources, including the repository logo and 
 
 ### `configs/`
 
-Contains reusable configuration files for experiments and training workflows.
+Contains reusable configuration files for experiments, model fine-tuning, and training workflows.
 
 ### `docs/`
 
@@ -79,7 +93,7 @@ Examples include running models with Ollama or LM Studio, fine-tuning with Unslo
 
 ### `scripts/`
 
-Contains utilities for environment setup, dependency checks, and development workflows.
+Contains utilities for environment setup, dependency checks, validation, and development workflows.
 
 ### `tests/`
 
@@ -90,12 +104,13 @@ Contains automated tests for example code, datasets, and configuration validatio
 | File | Purpose |
 |---|---|
 | `README.md` | Project overview and navigation |
+| `STRUCTURE.md` | Repository architecture and organization |
 | `LICENSE` | Open-source licensing terms |
 | `CONTRIBUTING.md` | Contribution process |
 | `CODE_OF_CONDUCT.md` | Community expectations |
 | `SECURITY.md` | Vulnerability reporting |
 | `SUPPORT.md` | Help and support information |
-| `CHANGELOG.md` | Version history |
+| `CHANGELOG.md` | Project change history |
 | `pyproject.toml` | Python project configuration |
 | `requirements.txt` | Python dependencies |
 | `.gitignore` | Files excluded from Git |
@@ -112,6 +127,7 @@ The repository follows a few simple principles:
 4. Organize guides by workflow rather than duplicating documentation.
 5. Include clear execution instructions and hardware requirements.
 6. Avoid unnecessary abstractions and premature complexity.
+7. Prefer reproducible examples with clearly documented dependencies.
 
 ## Adding New Content
 
